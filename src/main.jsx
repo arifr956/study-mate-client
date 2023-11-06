@@ -10,6 +10,10 @@ import Home from './pages/HomePage/Home.jsx';
 import Root from './pages/Root/Root.jsx';
 import ErrorPage from './pages/Root/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvder/AuthProvider';
+import Login from './users/Login';
+import Registration from './users/Registration';
+import User from './users/User';
+import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +27,19 @@ const router = createBrowserRouter([
         //loader: () => fetch ('/.json')
 
       },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/registration',
+        element: <Registration/>
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoute><User></User></PrivateRoute>
+      },
+
     ]}
 ]);
 

@@ -19,8 +19,8 @@ const faqs = [
 
 const styles = {
     card: {
-        backgroundColor: '#FCE7F3', // Change the background color
-        border: '2px solid #FF6B95', // Change the border style and color
+        backgroundColor: '#FCE7F3', 
+        border: '2px solid #FF6B95', 
         borderRadius: '10px',
         padding: '20px',
     },
@@ -30,7 +30,7 @@ const styles = {
 const Faq = () => {
     useEffect(() => {
         AOS.init({
-            duration: 1000,
+            duration: 2000,
             once: true,
         });
     }, []);
