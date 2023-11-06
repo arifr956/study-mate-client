@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <div>
+        <div className=" fixed bottom-0">
             <h3>this is footer</h3>
         </div>
     );
