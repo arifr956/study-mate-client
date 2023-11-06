@@ -1,0 +1,21 @@
+.user-info {
+    position: relative;
+  }
+  
+  .user-info .user-name {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position the name below the image */
+    left: 50%; /* Center the name horizontally */
+    transform: translateX(-50%); /* Center the name horizontally */
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  
+  .user-info:hover .user-name {
+    display: block;
+  }
+  

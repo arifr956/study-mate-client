@@ -14,6 +14,10 @@ import Login from './users/Login';
 import Registration from './users/Registration';
 import User from './users/User';
 import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
+import CreateAssignment from './pages/Assignment/CreateAssignment';
+import AllAssignment from './pages/Assignment/AllAssignment';
+import MyAssignment from './pages/Assignment/MyAssignment';
+import SubmittedAssignment from './pages/Assignment/SubmittedAssignment';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +43,23 @@ const router = createBrowserRouter([
         path: '/profile',
         element: <PrivateRoute><User></User></PrivateRoute>
       },
+      {
+        path: '/allassignment',
+        element: <AllAssignment/>
+      },
+      {
+        path: '/createassignment',
+        element: <PrivateRoute><CreateAssignment></CreateAssignment></PrivateRoute>
+      },
+      {
+        path: '/myassignment',
+        element: <PrivateRoute><MyAssignment/></PrivateRoute>
+      },
+      {
+        path: '/submittedassignment',
+        element: <PrivateRoute><SubmittedAssignment/></PrivateRoute>
+      },
+     
 
     ]}
 ]);
