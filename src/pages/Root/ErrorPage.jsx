@@ -3,7 +3,7 @@ const ErrorPage = () => {
     const error = useRouteError();
     console.error(error);
     return (
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center items-center min-h-screen">
             <div className="text-center" id="error-page">
 
                 <h1>Oops!</h1>

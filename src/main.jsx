@@ -9,6 +9,7 @@ import {
 import Home from './pages/HomePage/Home.jsx';
 import Root from './pages/Root/Root.jsx';
 import ErrorPage from './pages/Root/ErrorPage.jsx';
+import AuthProvider from './providers/AuthProvder/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        //loader: () => fetch ('/brand.json')
+        //loader: () => fetch ('/.json')
 
       },
     ]}
@@ -27,6 +28,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
