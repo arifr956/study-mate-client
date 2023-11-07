@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2'
@@ -52,15 +52,15 @@ const CreateAssignment = () => {
                   })
             }
         })
-        e.target.reset();
+       
 
         // Reset the form fields if needed
-        // setTitle('');
-        // setDescription('');
-        // setMarks('');
-        // setThumbnailUrl('');
-        // setDifficulty('easy');
-        // setDueDate(null);
+        setTitle('');
+        setDescription('');
+        setMarks('');
+        setThumbnailUrl('');
+        setDifficulty('easy');
+        setDueDate(null);
     };
 
     return (

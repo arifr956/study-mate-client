@@ -6,8 +6,7 @@ const ErrorPage = () => {
         <div className="flex justify-center items-center min-h-screen">
             <div className="text-center" id="error-page">
 
-                <h1>Oops!</h1>
-                <p>Sorry, an unexpected error has occurred.</p>
+                <img src={`https://i.ibb.co/GvFh494/404-banner.webp`} alt="Oops! Sorry, an unexpected error has occurred." />
                 <p className="my-3">
                     <i>{error.status} </i>
                     <i>{error.statusText || error.message}</i>

@@ -2,7 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import SingleAssignment from "./SingleAssignment";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvder/AuthProvider";
-import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+
 
 const AllAssignment = () => {
     const [assignments, setAssignments] = useState([]);
@@ -41,31 +43,47 @@ const AllAssignment = () => {
     const handleDelete = (id, email) => {
         if (!user) {
             // User is not authenticated, redirect to login
-            return <Link to="/login" className="btn btn-secondary">Login to Delete</Link>;
+            return <Navigate to="/login"></Navigate>
         }
 
+        console.log(id,email);
+
         if (email === user.email) {
-            const proceed = window.confirm('Are you sure you want to delete?');
-            if (proceed) {
-                fetch(`http://localhost:5000/allAssignment/${id}`, {
-                    method: 'DELETE'
-                })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: 'Success!',
-                                text: 'Product Deleted Successfully',
-                                icon: 'success',
-                                confirmButtonText: 'Cool'
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                        fetch(`http://localhost:5000/allAssignment/${id}`, {
+                            method: 'DELETE'
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                console.log(data.deletedCount);
+                                if (data.deletedCount > 0) {
+                                    Swal.fire({
+                                        title: "Deleted!",
+                                        text: "Your Assignment has been deleted.",
+                                        icon: "success"
+                                      });
+                                    const remaining = assignments.filter((assignment) => assignment._id !== id);
+                                    setFilteredAssignments(remaining);
+                                }
                             });
-                            const remaining = assignments.filter((assignment) => assignment._id !== id);
-                            setAssignments(remaining);
-                        }
-                    });
-            }
+                    
+                
+                }
+              });
+            
         } else {
-            alert('Not authorized to delete this assignment.');
+            toast.error('Not authorized to delete this assignment.', { position: 'top-center' });
         }
     };
 
@@ -127,6 +145,7 @@ const AllAssignment = () => {
                     <img src="https://i.ibb.co/bs2CfF2/download-1.png" alt="" />
                 </div>
             )}
+            <ToastContainer />
         </div>
     );
 };
