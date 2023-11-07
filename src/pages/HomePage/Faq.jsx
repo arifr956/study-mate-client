@@ -19,8 +19,8 @@ const faqs = [
 
 const styles = {
     card: {
-        backgroundColor: '#FCE7F3', 
-        border: '2px solid #FF6B95', 
+        backgroundColor: '#FCE7F3',
+        border: '2px solid #FF6B95',
         borderRadius: '10px',
         padding: '20px',
     },
