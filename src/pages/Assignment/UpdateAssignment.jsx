@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
-import { parse } from 'date-fns';
-import { Link, Navigate, useLoaderData } from 'react-router-dom';
+// import { parse } from 'date-fns';
+import { Link, useNavigate, useLoaderData } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ import { AuthContext } from '../../providers/AuthProvder/AuthProvider';
 
 const UpdateAssignment = () => {
     const newAssignment = useLoaderData();
-    const { title, description, marks, thumbnailUrl, difficulty, email, dueDate } = newAssignment;
+    const { title, description, marks, thumbnailUrl, difficulty, email } = newAssignment;
 
     // Define state variables for the form fields
     const [updatedAssignment, setUpdatedAssignment] = useState({
@@ -24,6 +24,9 @@ const UpdateAssignment = () => {
 
     const { user } = useContext(AuthContext);
     const { _id } = newAssignment;
+    
+    //to navigate after sucess
+    const navigate = useNavigate();
 
     const handleDateChange = (date) => {
         setUpdatedAssignment({ ...updatedAssignment, dueDate: date });
@@ -51,7 +54,7 @@ const UpdateAssignment = () => {
                             confirmButtonText: 'Cool',
 
                         });
-                        <Navigate to="/allAssignment"></Navigate>
+                        navigate('/allAssignment');
                     }
                 })
                 .catch((error) => {
