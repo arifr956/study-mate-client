@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import AOS from 'aos';
+// import  { useEffect } from "react";
+// import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { IoIosCreate, IoIosDocument } from "react-icons/io";
 import { FaRegEdit, FaRegEye } from "react-icons/fa";
 import { MdGrade } from "react-icons/md";
 import { FiSend } from "react-icons/fi";
+import { motion } from "framer-motion"
 
 
 const features = [
@@ -59,12 +60,12 @@ const styles = {
 };
 
 const Feature = () => {
-    useEffect(() => {
-        AOS.init({
-            duration: 2000,
-            once: true,
-        });
-    }, []);
+    // useEffect(() => {
+    //     AOS.init({
+    //         duration: 2000,
+    //         once: true,
+    //     });
+    // }, []);
 
     return (
         <div>
@@ -78,15 +79,25 @@ const Feature = () => {
             </h3>
             <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {features.map((feature, index) => (
-                    <div key={feature.id} className="my-6 mx-2 p-4" data-aos="fade-up">
-                        <div className="flex justify-center flex-col items-center text-center" style={styles.card}>
+
+                    <motion.div key={feature.id} className="my-6 mx-2 p-4" whileHover={{ scale: 1.2, rotate: 360 }}
+                        whileTap={{
+                            scale: 0.8,
+                            rotate: -360,
+                            borderRadius: "100%"
+                        }}>
+
+<div className="flex justify-center flex-col items-center text-center" style={styles.card}>
                             <div className="text-center text-7xl mb-4">
                                 {feature.icon}
                             </div>
                             <h2 className="text-2xl font-semibold mb-2">{feature.title}</h2>
                             <p className="text-lg">{feature.description}</p>
-                        </div>
-                    </div>
+                        </div> 
+                        </motion.div>
+
+                    
+                    
                 ))}
             </div>
         </div>
