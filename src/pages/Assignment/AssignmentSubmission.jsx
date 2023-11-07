@@ -8,7 +8,7 @@ const AssignmentSubmission = () => {
     const [pdfLink, setPdfLink] = useState('');
     const [notes, setNotes] = useState('');
     const newAssignment = useLoaderData();
-    const { _id, title, description, marks, thumbnailUrl, difficulty, email, dueDate } = newAssignment;
+    const {  title, description, marks, thumbnailUrl, difficulty, email,  } = newAssignment;
 
 
     const { user } = useContext(AuthContext);
@@ -71,6 +71,7 @@ const AssignmentSubmission = () => {
                         id="pdfLink"
                         placeholder="Enter PDF Link"
                         value={pdfLink}
+                        required
                         onChange={(e) => setPdfLink(e.target.value)}
                     />
                 </div>
@@ -83,6 +84,7 @@ const AssignmentSubmission = () => {
                         id="notes"
                         placeholder="Enter Notes"
                         value={notes}
+                        
                         onChange={(e) => setNotes(e.target.value)}
                     />
                 </div>
