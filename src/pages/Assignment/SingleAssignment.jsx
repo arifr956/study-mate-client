@@ -1,9 +1,12 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 
-const SingleAssignment = ({ assignment }) => {
-    const { _id, title, marks, thumbnailUrl, difficulty } = assignment;
+
+const SingleAssignment = ({ assignment, handleDelete }) => {
+    const { _id, title, marks, thumbnailUrl, difficulty, email } = assignment;
     
+
+   
 
     return (
         <div className="card card-side bg-base-100 shadow-xl">
@@ -24,6 +27,7 @@ const SingleAssignment = ({ assignment }) => {
                         <Link to={`/updateassignment/${_id}`}>
                             <button className="btn">Update Assignment</button>
                         </Link>
+                        <button onClick={()=> handleDelete ( _id, email)} className="btn">Delete Assignment</button>
                     </div>
                 </div>
             </div>
