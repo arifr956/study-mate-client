@@ -4,8 +4,7 @@ import logo from "../../../public/studymate.jpg";
 const Footer = () => {
     return (
         <div className="">
-            <footer className="relative no-margins fixed bottom-0 py-10 flex flex-col items-center bg-gradient-to-t from-cyan-900 via-blue-900 to-purple-900 overflow-hidden md:py-20">
-
+            <footer className="relative fixed bottom-0 w-full py-10 flex flex-col items-center bg-gradient-to-t from-cyan-900 via-blue-900 to-purple-900 overflow-hidden md:py-20">
                 <div className="relative z-10 container m-auto px-6 md:px-12">
                     <div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
                         <div className="flex flex-wrap items-center justify-between md:flex-nowrap">
@@ -18,15 +17,16 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div className="w-10/12 m-auto mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
-                                <div className="flex gap-3 items-center"><img src={logo} alt="StudyMate" className="w-16 h-16 rounded-full mx-auto" />
-                                <span className="block text-white font-semibold text-2xl">Study Mate</span></div>
+                                <div className="flex gap-3 items-center">
+                                    <img src={logo} alt="StudyMate" className="w-16 h-16 rounded-full mx-auto" />
+                                    <span className="block text-white font-semibold text-2xl">Study Mate</span>
+                                </div>
                                 <span className="block text-gray-300">Your Online Study Partner!</span>
                                 <span className="block text-gray-300">&copy; 2023 Study Mate</span>
                                 <span className="flex justify-between text-white">
                                     <Link to="/terms" className="font-semibold">Terms of Use</Link>
                                     <Link to="/privacy" className="font-semibold">Privacy Policy</Link>
                                 </span>
-                                
                             </div>
                         </div>
                     </div>

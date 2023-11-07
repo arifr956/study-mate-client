@@ -54,7 +54,7 @@ const Navbar = () => {
         ;
 
     return (
-        <div className="sticky top-0 z-50 px-3 md:px-12 navbar bg-orange-100 no-margins">
+        <div className="sticky top-0 z-50 px-3 md:px-12 navbar bg-teal-500 no-margins">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
