@@ -16,7 +16,7 @@ const SubmittedAssignment = () => {
     
 
     useEffect(() => {
-        fetch("http://localhost:5000/allsubmitted/")
+        fetch("https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app//")
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);
@@ -31,7 +31,7 @@ const SubmittedAssignment = () => {
     };
 
     const handleMarkAssignment = () => {
-        fetch(`http://localhost:5000/allsubmitted/${selectedAssignment._id}`, {
+        fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app//${selectedAssignment._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

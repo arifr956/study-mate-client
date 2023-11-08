@@ -12,7 +12,7 @@ const MyAssignment = () => {
     console.log(assignments);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allsubmitted/")
+        fetch("https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app//")
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);

@@ -65,17 +65,17 @@ const router = createBrowserRouter([
       {
         path: 'updateassignment/:id',
         element: <PrivateRoute><UpdateAssignment/></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allAssignment/${params.id}`)
+        loader: ({params}) => fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app/allAssignment/${params.id}`)
       },
       {
         path: 'viewassignment/:id',
         element: <PrivateRoute><ViewAssignment/></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allAssignment/${params.id}`)
+        loader: ({params}) => fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app/allAssignment/${params.id}`)
       },
       {
         path: 'submitAssignment/:id',
         element: <PrivateRoute><AssignmentSubmission/></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allAssignment/${params.id}`)
+        loader: ({params}) => fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app/allAssignment/${params.id}`)
       },
      
 

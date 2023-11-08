@@ -14,6 +14,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+
+
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -26,7 +28,7 @@ const Login = () => {
             position: "top-center",
             autoClose: 3000,
         });
-        navigate(location?.state? location.state : '/');
+        navigate(location?.state ? location.state : '/');
         console.log(result.user);
     })
     .catch()
@@ -40,7 +42,7 @@ const Login = () => {
                 position: "top-center",
                 autoClose: 3000,
             });
-            navigate(location?.state? location.state : '/');
+            navigate(location?.state ? location.state : '/');
             console.log(result.user);
         })
         .catch()
@@ -61,7 +63,7 @@ const Login = () => {
                 position: "top-center",
                 autoClose: 3000,
             });
-            navigate(location?.state? location.state : '/');
+            navigate(location?.state ? location.state : '/');
             console.log(result.user);
         })
        .catch((error) => {

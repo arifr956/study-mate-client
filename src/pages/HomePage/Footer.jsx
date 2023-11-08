@@ -17,16 +17,13 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div className="w-10/12 m-auto mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
-                                <div className="flex gap-3 items-center">
-                                    <img src={logo} alt="StudyMate" className="w-16 h-16 rounded-full mx-auto" />
+                                <div className="">
+                                    <img src={logo} alt="StudyMate" className="w-16 h-16 rounded-full" />
                                     <span className="block text-white font-semibold text-2xl">Study Mate</span>
                                 </div>
                                 <span className="block text-gray-300">Your Online Study Partner!</span>
                                 <span className="block text-gray-300">&copy; 2023 Study Mate</span>
-                                <span className="flex justify-between text-white">
-                                    <Link to="/terms" className="font-semibold">Terms of Use</Link>
-                                    <Link to="/privacy" className="font-semibold">Privacy Policy</Link>
-                                </span>
+                                
                             </div>
                         </div>
                     </div>
