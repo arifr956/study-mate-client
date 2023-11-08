@@ -33,7 +33,7 @@ const AssignmentSubmission = () => {
             obtainMarks: 0,
         };
 
-        fetch('http://localhost:5000/', {
+        fetch('https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

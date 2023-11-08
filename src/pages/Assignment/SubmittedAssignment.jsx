@@ -15,8 +15,9 @@ const SubmittedAssignment = () => {
 
     console.log(assignments);
 
+    const url = `https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/allsubmitted/`
     useEffect(() => {
-        fetch("http://localhost:5000/allsubmitted/")
+        fetch(url , {credentials: "include"})
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);
@@ -24,14 +25,14 @@ const SubmittedAssignment = () => {
                 setFilteredAssignments(filtered);
             })
             .catch((error) => console.error("Error fetching data: ", error));
-    }, []);
+    }, [url]);
 
     const openAssignment = (assignment) => {
         setSelectedAssignment(assignment);
     };
 
     const handleMarkAssignment = () => {
-        fetch(`http://localhost:5000/${selectedAssignment._id}`, {
+        fetch(`https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/${selectedAssignment._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

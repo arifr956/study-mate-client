@@ -10,9 +10,10 @@ const MyAssignment = () => {
     const { user } = useContext(AuthContext);
 
     console.log(assignments);
-
+ 
+    const url = `https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/allsubmitted/`
     useEffect(() => {
-        fetch("http://localhost:5000/allsubmitted/")
+        fetch(url , {credentials: "include"})
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);
@@ -21,7 +22,7 @@ const MyAssignment = () => {
                 setFilteredAssignments(filtered);
             })
             .catch((error) => console.error("Error fetching data: ", error));
-    }, []);
+    }, [url]);
 
     return (
         <div>

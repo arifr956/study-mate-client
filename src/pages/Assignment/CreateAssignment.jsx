@@ -32,7 +32,7 @@ const CreateAssignment = () => {
         console.log(newAssignment);
 
         //send data to server
-        fetch('http://localhost:5000/allAssignment/', {
+        fetch('https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/allAssignment/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
