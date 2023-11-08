@@ -33,7 +33,7 @@ const AssignmentSubmission = () => {
             obtainMarks: 0,
         };
 
-        fetch('https://study-mate-server.vercel.app/', {
+        fetch('https://study-mate-server.vercel.app/allsubmitted/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
