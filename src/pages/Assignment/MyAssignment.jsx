@@ -45,38 +45,40 @@ const MyAssignment = () => {
     <div>
       <h2 className="text-5xl text-center my-5">Your Submitted Assignment</h2>
       <motion.div initial="hidden" animate="visible" variants={container}>
-        <table className="table w-full border-2 border-teal-400 text-center mb-4">
-          <thead>
-            <tr className="text-lg text-teal-600 border-b-2 border-teal-400">
-              <th>Assignment Title</th>
-              <th> Image</th>
-              <th>Total Marks</th>
-              <th> Status</th>
-              <th> Obtain Marks</th>
-              <th> Feedback</th>
-            </tr>
-          </thead>
-          <motion.tbody variants={container}>
-            {filteredAssignments.map((submitted) => (
-              <motion.tr variants={item} key={submitted.id}>
-                <td>{submitted.title}</td>
-                <td>
-                  <div className="avatar">
-                    <div className="w-24 h-24">
-                      {submitted.thumbnailUrl && <img src={submitted.thumbnailUrl} alt="Title Thumbnail" />}
+      <div className="overflow-x-auto">
+          <table className="table w-full border-2 border-teal-400 text-center mb-4">
+            <thead>
+              <tr className="text-lg text-teal-600 border-b-2 border-teal-400">
+                <th>Assignment Title</th>
+                <th> Image</th>
+                <th>Total Marks</th>
+                <th> Status</th>
+                <th> Obtain Marks</th>
+                <th> Feedback</th>
+              </tr>
+            </thead>
+            <motion.tbody variants={container}>
+              {filteredAssignments.map((submitted) => (
+                <motion.tr variants={item} key={submitted.id}>
+                  <td>{submitted.title}</td>
+                  <td>
+                    <div className="avatar">
+                      <div className="w-24 h-24">
+                        {submitted.thumbnailUrl && <img src={submitted.thumbnailUrl} alt="Title Thumbnail" />}
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td>{submitted.marks}</td>
-                <td>{submitted.status}</td>
-                <td>
-                  {submitted.status === 'pending' ? "Not Marked" : submitted.obtainMarks}
-                </td>
-                <td>{submitted.feedback}</td>
-              </motion.tr>
-            ))}
-          </motion.tbody>
-        </table>
+                  </td>
+                  <td>{submitted.marks}</td>
+                  <td>{submitted.status}</td>
+                  <td>
+                    {submitted.status === 'pending' ? "Not Marked" : submitted.obtainMarks}
+                  </td>
+                  <td>{submitted.feedback}</td>
+                </motion.tr>
+              ))}
+            </motion.tbody>
+          </table>
+        </div>
       </motion.div>
     </div>
   );
