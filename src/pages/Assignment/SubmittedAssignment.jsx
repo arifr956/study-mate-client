@@ -15,7 +15,7 @@ const SubmittedAssignment = () => {
 
     console.log(assignments);
 
-    const url = `https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/allsubmitted/`
+    const url = `https://study-mate-server.vercel.app/allsubmitted/`
     useEffect(() => {
         fetch(url , {credentials: "include"})
             .then((response) => response.json())
@@ -32,7 +32,7 @@ const SubmittedAssignment = () => {
     };
 
     const handleMarkAssignment = () => {
-        fetch(`https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/${selectedAssignment._id}`, {
+        fetch(`https://study-mate-server.vercel.app/${selectedAssignment._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

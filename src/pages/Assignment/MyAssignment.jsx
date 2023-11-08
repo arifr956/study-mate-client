@@ -11,7 +11,7 @@ const MyAssignment = () => {
 
     console.log(assignments);
  
-    const url = `https://study-mate-server-dfnqpg0e1-arifur-rahmans-projects.vercel.app/allsubmitted/`
+    const url = `https://study-mate-server.vercel.app/allsubmitted/`
     useEffect(() => {
         fetch(url , {credentials: "include"})
             .then((response) => response.json())
