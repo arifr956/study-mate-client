@@ -13,10 +13,10 @@ const SubmittedAssignment = () => {
     const [feedback, setFeedback] = useState("");
     const [pdfNumPages, setPdfNumPages] = useState(null);
 
-    
+    console.log(assignments);
 
     useEffect(() => {
-        fetch("https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app//")
+        fetch("http://localhost:5000/allsubmitted/")
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);
@@ -31,7 +31,7 @@ const SubmittedAssignment = () => {
     };
 
     const handleMarkAssignment = () => {
-        fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app//${selectedAssignment._id}`, {
+        fetch(`http://localhost:5000/${selectedAssignment._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

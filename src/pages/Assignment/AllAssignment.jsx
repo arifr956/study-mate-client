@@ -14,7 +14,7 @@ const AllAssignment = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch("https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app/allAssignment/")
+        fetch("http://localhost:5000/allAssignment/")
             .then((response) => response.json())
             .then((data) => {
                 setAssignments(data);
@@ -61,7 +61,7 @@ const AllAssignment = () => {
               }).then((result) => {
                 if (result.isConfirmed) {
                     
-                        fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app/allAssignment/${id}`, {
+                        fetch(`http://localhost:5000/allAssignment/${id}`, {
                             method: 'DELETE'
                         })
                             .then((res) => res.json())

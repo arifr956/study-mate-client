@@ -37,7 +37,7 @@ const UpdateAssignment = () => {
 
         if (email === user.email) {
             // Send data to the server
-            fetch(`https://study-mate-server-qmpse44ck-arifur-rahmans-projects.vercel.app/allAssignment/${_id}`, {
+            fetch(`http://localhost:5000/allAssignment/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

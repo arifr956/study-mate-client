@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../providers/AuthProvder/AuthProvider";
-import logo from "../../../public/studymate.jpg";
+import logo from "/studymate.jpg";
 import "./Navbar.css"
 
 const Navbar = () => {
