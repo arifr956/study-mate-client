@@ -12,6 +12,7 @@ const AssignmentSubmission = () => {
 
 
     const { user } = useContext(AuthContext);
+    console.log(user);
 
     const navigate = useNavigate();
 
@@ -24,8 +25,10 @@ const AssignmentSubmission = () => {
             difficulty: difficulty || 'easy',
             creatorEmail: email || '',
             userEmail: user.email,
+            name: user.displayName,
             pdfLink,
             notes,
+            feedback: 'No Feedback',
             status: 'pending',
             obtainMarks: 0,
         };

@@ -29,13 +29,14 @@ const MyAssignment = () => {
             <div className="overflow-x-auto w-full mx-auto">
                 <table className="table w-full border-2 border-teal-400 text-center mb-4">
                     <thead>
-                        <tr className="text-lg text-teal-600">
+                        <tr className="text-lg text-teal-600 border-b-2 border-teal-400">
                             <th>Assignment Title</th>
                             <th> Image</th>
 
                             <th>Total Marks</th>
                             <th> Status</th>
                             <th> Obtain Marks</th>
+                            <th> Feedback</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +54,7 @@ const MyAssignment = () => {
                                 <td>
                                     {submitted.status == 'pending' ? "Not Marked" : submitted.obtainMarks}
                                 </td>
+                                <td>{submitted.feedback}</td>
 
 
                             </tr>
