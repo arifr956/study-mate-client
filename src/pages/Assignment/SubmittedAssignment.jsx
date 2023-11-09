@@ -112,21 +112,22 @@ const SubmittedAssignment = () => {
               {/* <button className="btn text-md text-red-400 border-red-400" onClick={() => window.open(selectedAssignment.pdfLink, '_blank')}>
                 View PDF (New Tab)
               </button> */}
-              <dialog id="my_modal_3" style={{ width: '94%' }}>
-                <div className="w-11/12 mx-auto">
-                  {/* Embed the PDF using an iframe */}
-                  <iframe src={selectedAssignment.pdfLink} width="100%" height="500px" title="PDF Viewer" />
-                  <button className="text-red-600 text-lg" onClick={() => document.getElementById("my_modal_3").close()}>Close</button>
-                </div>
-              </dialog>
-
-              <button
-                className="btn text-md text-red-400 border-red-400 mb-2"
-                onClick={() => document.getElementById("my_modal_3").showModal()}
-              >
-                View PDF (Modal)
-              </button>
             </p>
+            <dialog id="my_modal_3" style={{ width: '94%' }}>
+              <div className="w-11/12 mx-auto">
+                {/* Embed the PDF using an iframe */}
+                <iframe src={selectedAssignment.pdfLink} width="100%" height="500px" title="PDF Viewer" />
+                <button className="text-red-600 text-lg" onClick={() => document.getElementById("my_modal_3").close()}>Close</button>
+              </div>
+            </dialog>
+
+            <button
+              className="btn text-md text-red-400 border-red-400 mb-2"
+              onClick={() => document.getElementById("my_modal_3").showModal()}
+            >
+              View PDF (Modal)
+            </button>
+
 
             {selectedAssignment.pdfLink && (
               <div>
