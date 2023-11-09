@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import Swal from "sweetalert2";
@@ -107,12 +107,31 @@ const SubmittedAssignment = () => {
           <div className="mb-4">
             <h2 className="text-3xl my-2">{selectedAssignment.title}</h2>
             <p>Examinee Email: {selectedAssignment.userEmail}</p>
-            <p>Drive Link (PDF File): {selectedAssignment.pdfLink}</p>
+            <p className="my-2">
+              Drive Link (PDF File):{" "}
+              {/* <button className="btn text-md text-red-400 border-red-400" onClick={() => window.open(selectedAssignment.pdfLink, '_blank')}>
+                View PDF (New Tab)
+              </button> */}
+              <dialog id="my_modal_3" style={{ width: '94%' }}>
+                <div className="w-11/12 mx-auto">
+                  {/* Embed the PDF using an iframe */}
+                  <iframe src={selectedAssignment.pdfLink} width="100%" height="500px" title="PDF Viewer" />
+                  <button className="text-red-600 text-lg" onClick={() => document.getElementById("my_modal_3").close()}>Close</button>
+                </div>
+              </dialog>
+
+              <button
+                className="btn text-md text-red-400 border-red-400 mb-2"
+                onClick={() => document.getElementById("my_modal_3").showModal()}
+              >
+                View PDF (Modal)
+              </button>
+            </p>
 
             {selectedAssignment.pdfLink && (
               <div>
-                <button className="btn" onClick={() => document.getElementById("my_modal_4").showModal()}>
-                  View PDF
+                <button className="btn text-md text-red-400 border-red-400 mb-2" onClick={() => document.getElementById("my_modal_4").showModal()}>
+                  View PDF (React-Pdf)
                 </button>
                 <dialog id="my_modal_4" className="modal">
                   <div className="modal-box w-11/12 max-w-5xl">
@@ -137,7 +156,7 @@ const SubmittedAssignment = () => {
                 </dialog>
               </div>
             )}
-            <p className="mb-3 border-dashed border-2 border-teal-600">Examinee Note: {selectedAssignment.notes}</p>
+            <p className="mb-3 border-dashed border-2 border-teal-600"><span className=" text-teal-700">Examinee Note:</span> {selectedAssignment.notes}</p>
             <div className="text-center gap-5 flex items-center justify-center">
               <label htmlFor="marks">Marks:</label>
               <input
