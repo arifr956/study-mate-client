@@ -70,7 +70,7 @@ const UpdateAssignment = () => {
     };
 
     return (
-        <div>
+        <div className='mx-auto'>
             <h3 className="text-4xl font-bold text-center my-5">
                 Update
                 <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text"> {title}</span>
@@ -79,7 +79,7 @@ const UpdateAssignment = () => {
                 <Link to="/">
                     <button className="btn btn-ghost hover:red">Back To Home</button>
                 </Link>
-                <form onSubmit={handleUpdateAssignment} className="bg-gradient-to-r from-teal-400 to-blue-500 shadow-md rounded-md px-8 pt-6 pb-8 mb-4">
+                <form onSubmit={handleUpdateAssignment} className="bg-gradient-to-r from-teal-400 to-blue-500 shadow-md rounded-md px-8 pt-6 pb-8 mb-4 w-full md:w-3/4 lg:1/2 mx-auto">
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
                             Title <span className="text-red-600">*</span>

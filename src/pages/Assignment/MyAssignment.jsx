@@ -42,7 +42,7 @@ const MyAssignment = () => {
   }, [url]);
 
   return (
-    <div>
+    <div className="mx-auto">
       <h2 className="text-5xl text-center my-5">Your Submitted Assignment</h2>
       <motion.div initial="hidden" animate="visible" variants={container}>
       <div className="overflow-x-auto">

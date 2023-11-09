@@ -88,7 +88,7 @@ const AllAssignment = () => {
     };
 
     return (
-        <div className="md:m-5 lg:m-10">
+        <div className="mx-auto">
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="difficultyFilter">
                     Filter by Difficulty:

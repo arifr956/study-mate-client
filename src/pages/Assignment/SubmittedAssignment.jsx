@@ -1,10 +1,11 @@
 import  { useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
+//import samplePdf from "../../assets/sample.pdf"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-
 
 
 const SubmittedAssignment = () => {
@@ -70,7 +71,7 @@ const SubmittedAssignment = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="text-center">
+      <div className="text-center mx-auto">
         <h2 className="text-5xl my-5">Total Pending Assignment</h2>
         <div className="overflow-x-auto w-full mx-auto">
           <table className="table w-full border-2 border-teal-400 text-center mb-4">

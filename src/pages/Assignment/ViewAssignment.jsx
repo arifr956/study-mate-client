@@ -9,7 +9,7 @@ const ViewAssignment = () => {
 
 
     return (
-        <div>
+        <div className=" mx-auto">
             <h3 className="text-4xl font-bold text-center my-5">Details of
                 <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text"> {' '}
                     {newAssignment.title}

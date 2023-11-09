@@ -61,7 +61,7 @@ const AssignmentSubmission = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center mx-auto">
             <div className="bg-white w-96 p-8 rounded shadow-lg border-2 border-teal-500">
                 <h2 className="text-2xl font-bold mb-4">Assignment Submission</h2>
                 <div className="mb-4">
